@@ -69,8 +69,8 @@ def customer_can_afford_pet(customer, new_pet)
 end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
-  # if the customer can afford the pet
-  if customer_can_afford_pet(customer, pet)
+  # if the pet exists & the customer can afford the pet
+  if pet != nil && customer_can_afford_pet(customer, pet)
     # add the pet to the customers pet array
     add_pet_to_customer(customer, pet)
     # increase the number of pets sold of the petshop by 1
