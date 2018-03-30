@@ -67,3 +67,15 @@ def customer_can_afford_pet(customer, new_pet)
     return false
   end
 end
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+  # if the customer can afford the pet
+  if customer_can_afford_pet(customer, pet)
+    # add the pet to the customers pet array
+    add_pet_to_customer(customer, pet)
+    # increase the number of pets sold of the petshop by 1
+    increase_pets_sold(pet_shop, 1)
+    # increase the amount of pet shop money by the value of the pet
+    add_or_remove_cash(pet_shop, pet[:price])
+  end
+end
